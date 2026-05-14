@@ -1,0 +1,31 @@
+# Python
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# Environment
+.venv/
+env/
+venv/
+
+# Build
+build/
+dist/
+*.egg-info/
+
+# Test cache
+.pytest_cache/
+
+# Logs
+*.log
+
+# IDEs
+.vscode/
+.idea/
+
+# OS files
+.DS_Store
+
+# Docker artifacts (optional local use)
+*.tar
