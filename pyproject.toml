@@ -1,0 +1,16 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "http-client-plus"
+version = "0.1.0"
+description = "Lightweight HTTP client inspired by urllib3"
+authors = [{name = "Aniruddha Nayek"}]
+requires-python = ">=3.9"
+dependencies = [
+    "certifi",
+]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
