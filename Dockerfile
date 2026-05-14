@@ -1,11 +1,19 @@
-FROM python:3.10-slim
+FROM python:3.11-slim
 
-WORKDIR /app
+WORKDIR /src
 
-COPY requirements.txt .
+RUN apt-get update && apt-get install -y \
+    build-essential \
+    libssl-dev \
+    libffi-dev \
+    git \
+    && rm -rf /var/lib/apt/lists/*
 
-RUN pip install --no-cache-dir -r requirements.txt
+COPY . .
 
-COPY app.py .
+RUN pip install --upgrade pip setuptools wheel
 
-CMD ["python", "app.py"]
+RUN pip install -e .
+RUN pip install pytest cryptography certifi
+
+CMD ["pytest", "-q"]
